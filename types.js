@@ -59,3 +59,22 @@ function exibirNota(nota) {
     console.log('A nota do aluno foi ', nota);
 }
 exibirNota(nota);
+var funcionarios = [
+    {
+        nome: 'Markin',
+        sobrenome: 'Dessanti',
+        dataDeNascimento: new Date()
+    },
+    {
+        nome: 'Ciclano',
+        sobrenome: 'da Silva',
+        dataDeNascimento: new Date()
+    }
+];
+function tratarFuncionarios(funcionarios) {
+    for (var _i = 0, funcionarios_1 = funcionarios; _i < funcionarios_1.length; _i++) {
+        var funcionario = funcionarios_1[_i];
+        console.log('O nome do funcionário é', funcionario.nome);
+    }
+}
+tratarFuncionarios(funcionarios);
