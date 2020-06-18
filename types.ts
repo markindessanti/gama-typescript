@@ -68,3 +68,13 @@ function erro(mensagem:string) : never {
 function falha() {
 	return erro('Algo falhou...');
 }
+
+// Union types
+let nota: number | string = 10;
+nota = '5';
+
+function exibirNota(nota:string | number) {
+	console.log('A nota do aluno foi ', nota);
+}
+
+exibirNota(nota);

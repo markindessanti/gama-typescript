@@ -35,7 +35,27 @@ var n = null;
 function criarObjeto(objeto) {
     return objeto;
 }
+// const objetoCriado = criarObjeto ('Markin'); // Dá erro, pois o parâmetro tem que ser do tipo object
 var objetoCriado = criarObjeto({
     propriedade: 1
 });
 console.log(objetoCriado);
+// Never
+function loopInfinito() {
+    while (true) {
+        // code ...
+    }
+}
+function erro(mensagem) {
+    throw new Error(mensagem);
+}
+function falha() {
+    return erro('Algo falhou...');
+}
+// Union types
+var nota = 10;
+nota = '5';
+function exibirNota(nota) {
+    console.log('A nota do aluno foi ', nota);
+}
+exibirNota(nota);
