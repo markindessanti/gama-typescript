@@ -106,3 +106,19 @@ function tratarFuncionarios(funcionarios:Funcionario[]) {
 }
 
 tratarFuncionarios(funcionarios);
+
+// Valores Nulos ou Opcionais - Atentar para o ? na definição do tipo, que torna o telefone2 como opcional
+let altura: number | null = 1.6;
+
+type Contato = {
+	nome: string,
+	telefone1: string,
+	telefone2?: string
+}
+
+const contato:Contato = {
+	nome: 'José',
+	telefone1: '1234567'
+}
+
+console.log(contato);

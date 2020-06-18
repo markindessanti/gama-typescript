@@ -78,3 +78,10 @@ function tratarFuncionarios(funcionarios) {
     }
 }
 tratarFuncionarios(funcionarios);
+// Valores Nulos ou Opcionais - Atentar para o ? na definição do tipo, que torna o telefone2 como opcional
+var altura = 1.6;
+var contato = {
+    nome: 'José',
+    telefone1: '1234567'
+};
+console.log(contato);
