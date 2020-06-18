@@ -122,3 +122,12 @@ const contato:Contato = {
 }
 
 console.log(contato);
+
+// Type Assertion (com alternativa de declaração nos comentários)
+const  minhaIdade:any = 23;
+(minhaIdade as number).toString();
+// (<number>minhaIdade).toString();
+
+const input = document.getElementById('numero') as HTMLInputElement;
+// const input = <HTMLInputElement>document.getElementById('numero');
+console.log(input.value);

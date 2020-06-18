@@ -85,3 +85,10 @@ var contato = {
     telefone1: '1234567'
 };
 console.log(contato);
+// Type Assertion (com alternativa de declaração nos comentários)
+var minhaIdade = 23;
+minhaIdade.toString();
+// (<number>minhaIdade).toString();
+var input = document.getElementById('numero');
+// const input = <HTMLInputElement>document.getElementById('numero');
+console.log(input.value);
