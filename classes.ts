@@ -27,3 +27,31 @@ class NovaData {
 const novaData2 = new Data(23, 5, 1979);
 
 console.log(novaData2.ano);
+
+// Modificadores de acesso
+class Carro {
+	private velocidadeAtual: number = 0;
+
+	constructor(
+		marca: string,
+		modelo: string
+	) { }
+
+	private alterarVelocidade(delta:number) {
+		//...
+	}
+
+	acelerar() {
+		this.alterarVelocidade(5);
+	}
+
+	frear(){
+		this.alterarVelocidade(-5);
+	}
+}
+
+const carro = new Carro('FIAT', 'Uno');
+
+carro.acelerar();
+
+console.log(carro);
