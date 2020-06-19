@@ -23,11 +23,19 @@ var novaData2 = new Data(23, 5, 1979);
 console.log(novaData2.ano);
 // Modificadores de acesso
 var Carro = /** @class */ (function () {
-    function Carro(marca, modelo) {
+    function Carro(marca, modelo, velocidadeMaxima) {
+        if (velocidadeMaxima === void 0) { velocidadeMaxima = 220; }
+        this.velocidadeMaxima = velocidadeMaxima;
         this.velocidadeAtual = 0;
     }
     Carro.prototype.alterarVelocidade = function (delta) {
-        //...
+        var novaVelocidade = this.velocidadeAtual + delta;
+        if (novaVelocidade >= 0 && novaVelocidade < this.velocidadeMaxima) {
+            this.velocidadeAtual = novaVelocidade;
+        }
+        else {
+            this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0;
+        }
     };
     Carro.prototype.acelerar = function () {
         this.alterarVelocidade(5);
@@ -37,6 +45,6 @@ var Carro = /** @class */ (function () {
     };
     return Carro;
 }());
-var carro = new Carro('FIAT', 'Uno');
+var carro = new Carro('FIAT', 'Uno', 180);
 carro.acelerar();
 console.log(carro);

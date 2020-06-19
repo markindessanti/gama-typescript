@@ -34,11 +34,18 @@ class Carro {
 
 	constructor(
 		marca: string,
-		modelo: string
+		modelo: string,
+		private velocidadeMaxima:number = 220
 	) { }
 
 	private alterarVelocidade(delta:number) {
-		//...
+		const novaVelocidade = this.velocidadeAtual + delta;
+
+		if (novaVelocidade >= 0 && novaVelocidade < this.velocidadeMaxima) {
+			this.velocidadeAtual = novaVelocidade;
+		}else{
+			this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0;
+		}
 	}
 
 	acelerar() {
@@ -50,7 +57,7 @@ class Carro {
 	}
 }
 
-const carro = new Carro('FIAT', 'Uno');
+const carro = new Carro('FIAT', 'Uno', 180);
 
 carro.acelerar();
 
