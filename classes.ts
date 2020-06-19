@@ -55,6 +55,10 @@ class Carro {
 	frear(){
 		this.alterarVelocidade(-5);
 	}
+
+	obterVelocidade(){
+		return this.velocidadeAtual;
+	}
 }
 
 const carro = new Carro('FIAT', 'Uno', 180);
@@ -62,3 +66,31 @@ const carro = new Carro('FIAT', 'Uno', 180);
 carro.acelerar();
 
 console.log(carro);
+
+// Herança
+class Camaro extends Carro {
+	private turbo: boolean = false;
+
+	constructor() {
+		super('Chevrolet', 'Camaro', 500);
+	}
+
+	ligarTurbo(){
+		this.turbo = true;
+		console.log('Turbo ligado!');
+	}
+}
+
+const novoCamaro = new Camaro();
+
+novoCamaro.acelerar();
+novoCamaro.acelerar();
+novoCamaro.acelerar();
+novoCamaro.acelerar();
+console.log('Velocidade Atual: ', novoCamaro.obterVelocidade());
+novoCamaro.frear();
+novoCamaro.frear();
+novoCamaro.frear();
+console.log('Velocidade Atual: ', novoCamaro.obterVelocidade());
+
+novoCamaro.ligarTurbo();

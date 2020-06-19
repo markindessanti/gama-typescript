@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // Forma padrão de declaração de classe
 var Data = /** @class */ (function () {
     function Data(dia, mes, ano) {
@@ -43,8 +56,36 @@ var Carro = /** @class */ (function () {
     Carro.prototype.frear = function () {
         this.alterarVelocidade(-5);
     };
+    Carro.prototype.obterVelocidade = function () {
+        return this.velocidadeAtual;
+    };
     return Carro;
 }());
 var carro = new Carro('FIAT', 'Uno', 180);
 carro.acelerar();
 console.log(carro);
+// Herança
+var Camaro = /** @class */ (function (_super) {
+    __extends(Camaro, _super);
+    function Camaro() {
+        var _this = _super.call(this, 'Chevrolet', 'Camaro', 500) || this;
+        _this.turbo = false;
+        return _this;
+    }
+    Camaro.prototype.ligarTurbo = function () {
+        this.turbo = true;
+        console.log('Turbo ligado!');
+    };
+    return Camaro;
+}(Carro));
+var novoCamaro = new Camaro();
+novoCamaro.acelerar();
+novoCamaro.acelerar();
+novoCamaro.acelerar();
+novoCamaro.acelerar();
+console.log('Velocidade Atual: ', novoCamaro.obterVelocidade());
+novoCamaro.frear();
+novoCamaro.frear();
+novoCamaro.frear();
+console.log('Velocidade Atual: ', novoCamaro.obterVelocidade());
+novoCamaro.ligarTurbo();
