@@ -4,7 +4,7 @@ class Data {
 	mes: number;
 	ano: number
 
-	constructor(dia: number, mes: number, ano: number) {
+	constructor(dia: number, mes: number, ano: number = 1970) {
 		this.dia = dia;
 		this.mes = mes;
 		this.ano = ano;

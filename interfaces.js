@@ -1,3 +1,4 @@
+"use strict";
 function getUsuario() {
     return {
         nome: 'Markin',

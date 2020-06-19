@@ -1,6 +1,8 @@
+"use strict";
 // Forma padrão de declaração de classe
 var Data = /** @class */ (function () {
     function Data(dia, mes, ano) {
+        if (ano === void 0) { ano = 1970; }
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;

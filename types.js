@@ -1,3 +1,4 @@
+"use strict";
 // Boolean
 var contaPaga = false;
 // Number
